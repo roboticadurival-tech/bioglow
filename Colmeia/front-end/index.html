@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colmeia Digital - Dashboard</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <nav>
+      <a href="#" class="nav-link">Sobre o projeto</a>
+      <a href="#" class="nav-link">Dashboard</a>
+      <a href="#" class="nav-link">Sobre a equipe</a>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+
+    <section class="cards">
+      <div class="card">
+        <span class="card-bee">🐝</span>
+        <h2 class="card-title">Temperatura</h2>
+        <p class="card-value" id="valor-temperatura">-- °C</p>
+      </div>
+
+      <div class="card">
+        <span class="card-bee">🐝</span>
+        <h2 class="card-title">Umidade</h2>
+        <p class="card-value" id="valor-umidade">-- %</p>
+      </div>
+
+      <div class="card">
+        <span class="card-bee">🐝</span>
+        <h2 class="card-title">Peso</h2>
+        <p class="card-value" id="valor-peso">-- kg</p>
+      </div>
+    </section>
+
+    <section class="camera">
+  <img id="camera-stream" alt="Imagem ao vivo da colmeia" />
+  <p id="camera-status" hidden>Câmera indisponível. Verifique se ela está ligada e na mesma rede.</p>
+</section>
+
+  </main>
+
+  <footer class="footer"></footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

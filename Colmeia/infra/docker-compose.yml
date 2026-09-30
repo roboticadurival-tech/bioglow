@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: colmeia_mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: colmeia_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: colmeia_user
+      POSTGRES_PASSWORD: colmeia_password
+      POSTGRES_DB: colmeia_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
