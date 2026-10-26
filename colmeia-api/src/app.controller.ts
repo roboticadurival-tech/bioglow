@@ -32,7 +32,7 @@ export class AppController {
     const erros = await validate(dto, { whitelist: true });
 
     if (erros.length > 0) {
-      const motivos = erros.flatMap((e) => Object.values(e.constraints ?? {}));
+      const motivos = erros.flatMap((e: any) => Object.values(e.constraints ?? {}));
       this.logger.warn(`Leitura inválida (${topico}): ${motivos.join('; ')}`);
       return;
     }
