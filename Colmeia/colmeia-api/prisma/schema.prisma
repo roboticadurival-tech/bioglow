@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Telemetria {
+  id              String   @id @default(uuid())
+  apiarioId       String
+  colmeiaId       String
+  pesoKg          Float
+  tempInterna     Float
+  umidadeInterna  Float
+  bateriaV        Float
+  criadoEm        DateTime @default(now())
+
+  @@index([apiarioId, colmeiaId])
+}
