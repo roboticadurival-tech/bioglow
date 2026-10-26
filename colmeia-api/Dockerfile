@@ -1,5 +1,5 @@
 # 1. Estágio de Build
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /usr/src/app
 
@@ -15,7 +15,7 @@ RUN npx prisma generate
 RUN npm run build
 
 # 2. Estágio de Produção
-FROM node:18-alpine
+FROM node:20-alpine
 
 WORKDIR /usr/src/app
 
